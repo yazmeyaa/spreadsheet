@@ -31,8 +31,8 @@ class Sheet implements Component {
         const container = document.createElement('div')
         const canvas = document.createElement('canvas')
 
-        canvas.width = 800
-        canvas.height = 550
+        canvas.width = this.spreadsheet.viewport.width
+        canvas.height = this.spreadsheet.viewport.height
 
         const topScrollFiller = document.createElement('div')
         const bottomScrollFiller = document.createElement('div')
