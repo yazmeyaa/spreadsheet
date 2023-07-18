@@ -96,7 +96,7 @@ class Sheet implements Component {
         const viewportHeight = this.spreadsheet.viewport.height
         const viewportBottom = currentScroll + viewportHeight
 
-        for (let idx = firstRowInViewport, height = currentScroll; height < viewportBottom; idx++) {
+        for (let idx = firstRowInViewport, height = currentScroll; height <= viewportBottom; idx++) {
             height += this.spreadsheet.config.rows[idx].height
             lastRowIdx = idx
         }
@@ -176,8 +176,10 @@ class Sheet implements Component {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height) //Clear screen
 
         let rowsCount = 0;
+        console.log(firstRow, lastRow)
         for (let row = firstRow; row <= lastRow + 10; row++) {
-            for (let col = firstCol; col < lastCol; col++) {
+            if(!this.spreadsheet.data[row]) break;
+            for (let col = firstCol; col <= lastCol; col++) {
                 this.renderCell(row, col)
             }
             rowsCount += 1

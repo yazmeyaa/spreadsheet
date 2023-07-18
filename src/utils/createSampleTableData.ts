@@ -33,11 +33,11 @@ export function createSampleTableConfig(rows: number, cols: number): TableSettin
 
     for (let row = 0; row < rows; row++) {
         const title = String(row + 1)
-        rowsArray.push(new Row(40, title))
+        rowsArray.push(new Row( row % 2 === 0 ? 40 : 80, title))
     }
     for (let col = 0; col < cols; col++) {
         const title = String(col + 1)
-        colsArray.push(new Column(100, title))
+        colsArray.push(new Column( col % 2 === 0 ? 100 : 250, title))
     }
 
     settings.columns = structuredClone(colsArray)
