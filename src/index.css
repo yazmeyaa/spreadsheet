@@ -7,3 +7,8 @@ canvas {
     display: block;
     box-sizing: border-box;
 }
+
+.spreadsheet_container {
+    overflow-y: scroll;
+    box-sizing: border-box;
+}

@@ -8,7 +8,6 @@ export function createSampleTableData(rows: number, cols: number, sheet: Spreads
 
         const innerRow: Cell[] = []
         for (let col = 0; col < cols; col++) {
-
             const showValue = `${row}:${col}`
             const cellProps: CellProperties = {
                 display: showValue,
